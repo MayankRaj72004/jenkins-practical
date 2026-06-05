@@ -1,0 +1,49 @@
+services:
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend
+    
+    networks:
+      - practical-network
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+     - "3000:3000"
+
+    environment:
+      PORT: ${PORT}
+      MONGO_URI: ${MONGO_URI}
+
+    depends_on:
+      - mongo
+    networks:
+      - practical-network
+
+  mongo:
+    image: mongo
+
+    container_name: mongo
+
+    ports:
+      - "27021:27021"
+
+    volumes:
+     - mongo-data:/data/db
+
+    networks:
+      - practical-network
+
+networks:
+  practical-network:
+
+volumes: 
+  mongo-data:
+
+
+    
