@@ -11,7 +11,8 @@ mongoose.connect(MONGO_URI)
 app.get("/api",(req,res)=>{
     res.json({
         message: "Node backend running",
-        database: "MongoDB connected"
+        database: "MongoDB connected ",
+        file: "is changed"
     });
 });
 
