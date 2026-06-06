@@ -1,7 +1,7 @@
 services:
   frontend:
     build: ./frontend
-    
+    container_name: frontend
     ports:
       - "8081:80"
     depends_on:
@@ -12,7 +12,7 @@ services:
 
   backend:
     build: ./backend
-    
+    container_name: backend
     ports:
      - "3000:3000"
 
@@ -28,6 +28,7 @@ services:
   mongo:
     image: mongo
 
+    container_name: mongo
 
     ports:
       - "27021:27021"
