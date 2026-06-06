@@ -12,7 +12,7 @@ app.get("/api",(req,res)=>{
     res.json({
         message: "Node backend running",
         database: "MongoDB connected ",
-        file: "is changed and the jenkins file is added in github repo"
+        file: "is changed and the jenkins file is added in github repo and webhook added"
     });
 });
 
